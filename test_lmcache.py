@@ -31,8 +31,7 @@ from datetime import datetime
 # SHARED_CONTEXT is ~8000 tokens — sent identically on every request.
 # This is the portion LMCache caches on disk after phase 1.
 # On phase 2, all ~8000 token prefill is skipped; only the short question
-# (~20 tokens) is computed, giving ~8000/20 = ~400X theoretical max speedup.
-# In practice, disk I/O and overhead bring this to 8-15X.
+# (~20 tokens) is computed.
 # ---------------------------------------------------------------------------
 SHARED_CONTEXT = """\
 You are an expert AI assistant and technical architect. Below is a comprehensive
